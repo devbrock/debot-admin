@@ -10,7 +10,7 @@ export default function handler(req, res) {
         pass: 'JettaMeeko1009'
     })
 
-    ssh.exec('docker restart twilioTest', {
+    ssh.exec(`docker restart ${process.env.CONTAINER_NAME}`, {
         out: console.log.bind(console)
     }).start();
 
